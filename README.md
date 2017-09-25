@@ -7,7 +7,7 @@ This is a template for the creation of an ioBroker adapter with TypeScript. Whil
 The **bare** branch only contains the main files and admin UI, no widget, no additional www files, no docs.
 
 ## Steps 
-1. download and unpack this packet from github ```https://github.com/AlCalzone/ioBroker.template-ts/archive/master.zip```
+1. download and unpack this packet from github ```https://github.com/AlCalzone/ioBroker.template-ts/archive/bare.zip```
   or clone git repository ```git clone https://github.com/AlCalzone/ioBroker.template-ts.git```
 
 2. download required npm packets. Write in ioBroker.template directory:
@@ -24,7 +24,7 @@ The **bare** branch only contains the main files and admin UI, no widget, no add
   
   ```npm install -g grunt-cli```
  
-4. rename directory from *ioBroker.template-ts* (can be *ioBroker.template-master*) to *iobroker.mynewname*
+4. rename directory from *ioBroker.template-ts* (can be *ioBroker.template-bare*) to *iobroker.mynewname*
 
 5. to use this template you should copy it into *.../iobroker/node_modules* directory and then create an instance for it with iobroker.admin
 
@@ -35,18 +35,8 @@ The **bare** branch only contains the main files and admin UI, no widget, no add
   * [Adapter-Development-Documentation](https://github.com/ioBroker/ioBroker/wiki/Adapter-Development-Documentation),
   
   * [Installation, setup and first steps with an ioBroker Development Environment](https://github.com/ioBroker/ioBroker/wiki/Installation,-setup-and-first-steps-with-an-ioBroker-Development-Environment)
-  
-  * [Write and debug vis widgets](https://github.com/ioBroker/ioBroker/wiki/How-to-debug-vis-and-to-write-own-widget-set)
-  
-  * files under the www folders are made available under http://&lt;iobrokerIP&gt;:8082/&lt;adapter-name&gt;/
-    * for this to work the iobroker.vis adapter has to be installed
-    * delete this folder if you do not plan to export any files this way
-    * call ```iobroker upload <adapter-name>``` after you change files in the www folder to get the new files uploaded to vis
-  * the widget folder contains an example of a vis widget
-    * you might want to start with *widget/<adapter-name>.html* and *widget/js/<adapter-name>.js*
-    * call ```iobroker visdebug <adapter-name>``` to enable debugging and upload widget to "vis". (This works only from V0.7.15 of js-controller)
-    * If you do not plan to export any widget then delete the whole widget folder and remove the ```"restartAdapters": ["vis"]``` statement from *io-package.json*
-    * After admin/index.html is changed you must execute ```iobroker upload mynewname``` to see changes in admin console. The same is valid for any files in *admin* and *www* directory  
+   
+  * After any files in the *admin* dir are changed you must execute ```iobroker upload mynewname``` to see changes in admin console. 
 
 7. change version: edit package.json and then call ```grunt p``` in your adapter directory.
   
